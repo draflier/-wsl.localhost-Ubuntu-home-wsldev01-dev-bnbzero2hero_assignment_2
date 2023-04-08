@@ -32,8 +32,8 @@ describe('Box (proxy)', function () {
 
     addrProxyAdmin = scBoxProxyAdmin.address;
 
-    console.log("Box proxy adddress deployed to: " + scBoxProxyAdmin.address);
-    console.log("Box implementation adddress deployed to : " + strAddr);
+    console.log("Box proxy implementation adddress deployed to: " + scBoxProxyAdmin.address);
+    console.log("Box logic adddress deployed to : " + strAddr);
     expect((await scBoxProxyAdmin.retrievePlusConstant()).toString()).to.equal('33');
   });
   it('preparing for upgrade', async function () {
@@ -61,7 +61,7 @@ describe('Box (proxy)', function () {
         console.log(e);
     }
 
-    console.log("BoxV2 implementation adddress deployed to : " + scBoxV2.address);
+    console.log("BoxV2 logic adddress deployed to : " + scBoxV2.address);
     // Test if the returned value is the same one
     // Note that we need to use strings to compare the 256 bit integers
     expect((await scBoxV2.retrievePlusConstant()).toString()).to.equal('35');
